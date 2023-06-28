@@ -5,7 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Name
     |--------------------------------------------------------------------------
@@ -16,9 +16,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+	'name' => env('APP_NAME', 'Laravel'),
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Version
     |--------------------------------------------------------------------------
@@ -29,9 +29,9 @@ return [
     |
     */
 
-    'version' => env('APP_VERSION', '0.1.0'),
+	'version' => env('APP_VERSION', '0.2.0'),
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
@@ -42,9 +42,9 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+	'env' => env('APP_ENV', 'production'),
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
@@ -55,9 +55,9 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+	'debug' => (bool) env('APP_DEBUG', false),
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
@@ -68,13 +68,13 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+	'url' => env('APP_URL', 'http://localhost'),
 
-    'frontend_url' => env('FRONTEND_URL', 'http://localhost:3000'),
+	'frontend_url' => env('FRONTEND_URL', 'http://localhost:3000'),
 
-    'asset_url' => env('ASSET_URL'),
+	'asset_url' => env('ASSET_URL'),
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
@@ -85,9 +85,9 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+	'timezone' => 'UTC',
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
@@ -98,9 +98,9 @@ return [
     |
     */
 
-    'locale' => 'en',
+	'locale' => 'en',
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
@@ -111,9 +111,9 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+	'fallback_locale' => 'en',
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Faker Locale
     |--------------------------------------------------------------------------
@@ -124,9 +124,9 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+	'faker_locale' => 'en_US',
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
@@ -137,11 +137,11 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+	'key' => env('APP_KEY'),
 
-    'cipher' => 'AES-256-CBC',
+	'cipher' => 'AES-256-CBC',
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
     |--------------------------------------------------------------------------
@@ -154,12 +154,12 @@ return [
     |
     */
 
-    'maintenance' => [
-        'driver' => 'file',
-        // 'store'  => 'redis',
-    ],
+	'maintenance' => [
+		'driver' => 'file',
+		// 'store'  => 'redis',
+	],
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
@@ -170,22 +170,22 @@ return [
     |
     */
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
-        /*
+	'providers' => ServiceProvider::defaultProviders()->merge([
+		/*
          * Package Service Providers...
          */
 
-        /*
+		/*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-    ])->toArray(),
+		App\Providers\AppServiceProvider::class,
+		App\Providers\AuthServiceProvider::class,
+		// App\Providers\BroadcastServiceProvider::class,
+		App\Providers\EventServiceProvider::class,
+		App\Providers\RouteServiceProvider::class,
+	])->toArray(),
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Class Aliases
     |--------------------------------------------------------------------------
@@ -196,8 +196,8 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
+	'aliases' => Facade::defaultAliases()->merge([
+		// 'Example' => App\Facades\Example::class,
+	])->toArray(),
 
 ];
