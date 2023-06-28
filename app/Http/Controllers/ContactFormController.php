@@ -29,7 +29,7 @@ class ContactFormController extends Controller
 				'message' => 'required|string',
 			]);
 
-			return response()->json(["message" => $validated]);
+			return response()->json(['success' => true, "message" => $validated]);
 		} catch (\Throwable $th) {
 			return response()->json(['sucess' => false, 'message' => $th->getMessage()]);
 		}
