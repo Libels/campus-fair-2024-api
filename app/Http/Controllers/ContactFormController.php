@@ -20,12 +20,15 @@ class ContactFormController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		// $validated = $request->validated();
-		$validated = $request->validate([
-			'email' => 'required|email:rfc,dns',
-		]);
+		try {
+			$validated = $request->validate([
+				'email' => 'required|email:rfc,dns',
+			]);
 
-		return response()->json($validated);
+			return response()->json($validated);
+		} catch (\Throwable $th) {
+			return response()->json(['sucess' => false, 'message' => $th->getMessage()]);
+		}
 	}
 
 	/**

@@ -12,9 +12,13 @@ class NewsletterController extends Controller
 	 */
 	public function store(Request $request): JsonResponse
 	{
-		$validated = $request->validate([
-			'email' => 'required|email:rfc,dns',
-		]);
+		try {
+			$validated = $request->validate([
+				'email' => 'required|email:rfc,dns',
+			]);
+		} catch (\Throwable $th) {
+			return response()->json(['sucess' => false, 'message' => $th->getMessage()]);
+		}
 
 		try {
 			$subscriber = Newsletter::updateOrCreate([
@@ -36,14 +40,18 @@ class NewsletterController extends Controller
 	 */
 	public function destroy(Request $request): JsonResponse
 	{
-		$validated = $request->validate([
-			'email' => 'required|email:rfc,dns',
-		]);
+		try {
+			$validated = $request->validate([
+				'email' => 'required|email:rfc,dns',
+			]);
 
-		$subscriber = Newsletter::where([
-			'email' => $request->email
-		])->delete();
+			$subscriber = Newsletter::where([
+				'email' => $request->email
+			])->delete();
 
-		return response()->json(['success' => $subscriber ? true : false, 'message' => $subscriber ? 'unsubscribed' : 'mail not in list']);
+			return response()->json(['success' => $subscriber ? true : false, 'message' => $subscriber ? 'unsubscribed' : 'mail not in list']);
+		} catch (\Throwable $th) {
+			return response()->json(['sucess' => false, 'message' => $th->getMessage()]);
+		}
 	}
 }
