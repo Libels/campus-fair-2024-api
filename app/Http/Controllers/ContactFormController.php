@@ -25,11 +25,11 @@ class ContactFormController extends Controller
 				'fullName' => 'required|string',
 				'email' => 'required|email:rfc,dns',
 				'phoneNumber' => 'required|string',
-				'company' => 'nullable|string',
+				'company' => 'string|nullable',
 				'message' => 'required|string',
 			]);
 
-			return response()->json($validated);
+			return response()->json(["message" => $validated]);
 		} catch (\Throwable $th) {
 			return response()->json(['sucess' => false, 'message' => $th->getMessage()]);
 		}
