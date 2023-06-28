@@ -22,7 +22,11 @@ class ContactFormController extends Controller
 	{
 		try {
 			$validated = $request->validate([
+				'name' => 'required|string',
 				'email' => 'required|email:rfc,dns',
+				'phone' => 'required|string',
+				'company' => 'string',
+				'message' => 'required|string',
 			]);
 
 			return response()->json($validated);
