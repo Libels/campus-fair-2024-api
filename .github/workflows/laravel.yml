@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+    - uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ env.PHP_VERSION }}
     - uses: actions/checkout@v3
@@ -47,7 +47,7 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+    - uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ env.PHP_VERSION }}
     - name: Checkout origin
