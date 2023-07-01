@@ -13,8 +13,8 @@ class NewsletterController extends Controller
 	public function store(Request $request): JsonResponse
 	{
 		try {
-			$validated = $request->validate([
-				'email' => 'required|email:rfc,dns',
+			$request->validate([
+				'email' => ['required', 'email:rfc,dns'],
 			]);
 		} catch (\Throwable $th) {
 			return response()->json(['sucess' => false, 'message' => $th->getMessage()]);
