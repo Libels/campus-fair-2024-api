@@ -38,7 +38,7 @@ class LeadController extends Controller
 				'name' => $request->fullName,
 				'email' => $request->email,
 				'phone' => $request->phoneNumber,
-				'role' => $request->company,
+				'role' => $request->role,
 				'company' => $request->company,
 				'message' => $request->message
 			]);
