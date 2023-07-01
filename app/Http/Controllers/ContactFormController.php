@@ -21,7 +21,7 @@ class ContactFormController extends Controller
 	public function store(Request $request)
 	{
 		try {
-			$validated = $request->validate([
+			$request->validate([
 				'fullName' => ['required', 'string'],
 				'email' => ['required', 'email:rfc,dns'],
 				'phoneNumber' => ['required', 'string'],
