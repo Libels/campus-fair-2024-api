@@ -2,8 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\{NewsletterController, ContactFormController, LeadController};
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +29,10 @@ Route::controller(ContactFormController::class)->group(function () {
 	Route::get('/contact', 'index');
 	Route::post('/contact', 'store');
 	Route::get('/contact/{id}', 'show');
+});
+
+Route::controller(LeadController::class)->group(function () {
+	Route::get('/lead', 'index');
+	Route::post('/lead', 'store');
+	Route::get('/lead/{id}', 'show');
 });
