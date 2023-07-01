@@ -16,7 +16,7 @@ return new class extends Migration
 			$table->string('name');
 			$table->string('email');
 			$table->string('phone'); // Not intended for automation
-			$table->string('company');
+			$table->string('company')->nullable();
 			$table->longText('message');
 			$table->timestamps();
 		});
